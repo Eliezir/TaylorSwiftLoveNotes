@@ -2,6 +2,7 @@ import React, { useEffect, useState, useRef } from "react";
 import { captureRef } from 'react-native-view-shot';
 import * as Sharing from 'expo-sharing';
 import * as Font from 'expo-font';
+import Icon from "react-native-vector-icons/FontAwesome";
 
 import {
   StyleSheet,
@@ -19,7 +20,7 @@ import {
   photos,
   albumColor
 } from "./src/services/quotesServices";
-import Icon from "react-native-vector-icons/FontAwesome";
+
 
 let backgroundTransition = "#e7e7e7"
 export default function App() {

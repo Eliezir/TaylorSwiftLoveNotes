@@ -93,7 +93,7 @@ export const photos =
 "Fearless (Taylor's Version)": "https://firebasestorage.googleapis.com/v0/b/swiftquotes-2c798.appspot.com/o/Albuns%2FPhotos%2FCapa_de_Fearless.png?alt=media&token=06f381c4-31af-464a-a246-c8d2d6132b2e",
  Folklore: "https://firebasestorage.googleapis.com/v0/b/swiftquotes-2c798.appspot.com/o/Albuns%2FPhotos%2FCapa_de_Folklore.png?alt=media&token=6f2f19d8-553d-4b13-97a7-2cc6782148db",
  Lover: "https://firebasestorage.googleapis.com/v0/b/swiftquotes-2c798.appspot.com/o/Albuns%2FPhotos%2FCapa_de_Lover.png?alt=media&token=08899ab4-28e3-4406-83c4-d0d9f73ba7d1",
- "Red (Taylor's Version)": "https://firebasestorage.googleapis.com/v0/b/swiftquotes-2c798.appspot.com/o/Albuns%2FPhotos%2FCapa_de_Red.jpeg?alt=media&token=d88cb17d-dca1-4177-a4fc-e751b54412c4",
+ "Red (Taylor's Version)": "https://firebasestorage.googleapis.com/v0/b/swiftquotes-2c798.appspot.com/o/Albuns%2FPhotos%2FCapa_de_Red.png?alt=media&token=26f7dc24-fa97-4ccc-8d1c-fd94c116b319&_gl=1*klnoxn*_ga*NDQ0NTUyNzc4LjE2NzE2NjY5NTQ.*_ga_CW55HF8NVT*MTY4NTQ3MDk5OS42My4xLjE2ODU0NzM3MTYuMC4wLjA.",
  Reputation: "https://firebasestorage.googleapis.com/v0/b/swiftquotes-2c798.appspot.com/o/Albuns%2FPhotos%2FCapa_de_Reputation.png?alt=media&token=8c425382-30f6-4c71-807d-a7b7932d6f74",
  "Speak Now": "https://firebasestorage.googleapis.com/v0/b/swiftquotes-2c798.appspot.com/o/Albuns%2FPhotos%2FCapa_de_Speak_Now_cover.png?alt=media&token=142ad0be-a8d5-4e3c-87c6-c7c675e2837d"
 }
