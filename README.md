@@ -17,7 +17,7 @@ A platform for users to share various ways of saying "I love you" using lyrics f
 <br>
 
 <div align="center">
-  <img style="height:648px"src="appGif.gif">
+  <img src="appGif.gif">
 </div>
 
 >Status: Done ✅
