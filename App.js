@@ -1,6 +1,7 @@
 import React, { useEffect, useState, useRef } from "react";
-import * as Sharing from 'expo-sharing';
 import { captureRef } from 'react-native-view-shot';
+import * as Sharing from 'expo-sharing';
+import * as Font from 'expo-font';
 
 import {
   StyleSheet,
@@ -11,7 +12,7 @@ import {
   TouchableOpacity,
   Animated,
   Easing,
-  Share
+  
 } from "react-native";
 import {
   getQuotes,
@@ -20,12 +21,25 @@ import {
 } from "./src/services/quotesServices";
 import Icon from "react-native-vector-icons/FontAwesome";
 
-let backgroundTransition = "#121212"
+let backgroundTransition = "#e7e7e7"
 export default function App() {
+  let [fontsLoaded] = Font.useFonts({
+    "Fearless (Taylor's Version)": require('./assets/fonts/Montserrat-Light.ttf'),
+    "1989 (Taylor's Version)": require('./assets/fonts/PermanentMarker-Regular.ttf'),
+    Evermore: require('./assets/fonts/IMFellDWPica-Italic.ttf'),
+    Folklore: require('./assets/fonts/IMFellDWPica-Italic.ttf'),
+    Lover: require('./assets/fonts/Satisfy-Regular.ttf'),
+    "Red (Taylor's Version)": require('./assets/fonts/Anton-Regular.ttf'),
+    Reputation: require('./assets/fonts/UnifrakturMaguntia-Regular.ttf'),
+    "Speak Now": require('./assets/fonts/Rochester-Regular.ttf'),
+    "LyricsCaption": require("./assets/fonts/Gotham-Bold.otf"),
+  })
+
   const [buttonText, setButtonText] = useState("Waiting for Taylor");
   const [img, setImg] = useState();
   const [quotesArray, setQuotesArray] = useState([]);
   const [lyrics, setLyrics] = useState(false);
+
   const [background] = useState(new Animated.Value(0));
   const [sharingBackground, setSharingBackground] = useState("transparent");
   const [progress, setProgress] = useState(new Animated.Value(0));
@@ -78,8 +92,6 @@ export default function App() {
     await Linking.openURL(lyrics.spotifyURL);
   };
 
-
-
   useEffect(() => {
     getQuotes().then((quotes) => {
       setQuotesArray(quotes);
@@ -92,8 +104,8 @@ export default function App() {
     }
   }, [quotesArray]);
 
-  const lyricsRef = useRef();
 
+  const lyricsRef = useRef();
   const shareLyrics = async () => {
     const uri = await captureRef(lyricsRef, {
       format: 'png',
@@ -102,7 +114,7 @@ export default function App() {
     const shareOptions = {
       mimeType: 'image/png',
       dialogTitle: 'Taylor Swift Quotes',
-      message: `Omg its taylor swift ${lyrics.spotifyURL}`,
+      message:  `Thinking about u 💜 ${lyrics.spotifyURL}`
     }
     try{ Sharing.shareAsync(uri, shareOptions) }
       catch(e){
@@ -111,18 +123,8 @@ export default function App() {
    
   }
 
-/* 
-  const shareLyrics = async () => {
-    const uri = await captureRef(lyricsRef, {
-      format: 'png',
-      quality: 0.8,
-    });
-    await Share.share({
-      url: uri,
-      message:
-      `Thinking about u 🥺💜 ${lyrics.spotifyURL}`
-    });
-  } */
+
+
 
   return (
     <Animated.View
@@ -139,9 +141,9 @@ export default function App() {
       )}
       <View style={styles.creditsRow}>
         <Text style={styles.songName}>{lyrics.song}</Text>
-        <Text style={styles.album}>{lyrics.album}</Text>
+        <Text style={[styles.album, {fontFamily : lyrics.album}]}>{lyrics.album}</Text>
       </View>
-      <Text style={styles.song}>{lyrics.lyrics}</Text>
+      <Text style={[styles.song, {fontFamily : 'LyricsCaption'}]}>{lyrics.lyrics}</Text>
       </View>
       {!lyrics ? 
       <TouchableOpacity
@@ -192,7 +194,8 @@ const styles = StyleSheet.create({
     height:200,
     marginVertical: 20,
     textAlign: "center",
-    textAlignVertical: "center",
+    textAlignVertical: "top",
+    fontWeight: 800,
   },
   btn: {
     width: 150,
@@ -212,11 +215,12 @@ const styles = StyleSheet.create({
     fontSize: 21,
     color : "#fff",
     fontWeight: 700,
+    textAlign: "center",
   },
   album:{
-    fontSize: 15,
+    fontSize: 18,
     color : "rgba(255,255,255,0.5)",
-    fontWeight: 900,
+    textAlign: "center",
   },
   creditsRow:{
     justifyContent: "flex-start",
