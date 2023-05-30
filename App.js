@@ -12,7 +12,7 @@ import {
   TouchableOpacity,
   Animated,
   Easing,
-  
+  ActivityIndicator
 } from "react-native";
 import {
   getQuotes,
@@ -32,7 +32,7 @@ export default function App() {
     "Red (Taylor's Version)": require('./assets/fonts/Anton-Regular.ttf'),
     Reputation: require('./assets/fonts/UnifrakturMaguntia-Regular.ttf'),
     "Speak Now": require('./assets/fonts/Rochester-Regular.ttf'),
-    "LyricsCaption": require("./assets/fonts/Gotham-Bold.otf"),
+    LyricsCaption: require('./assets/fonts/Gotham-Bold.otf'),
   })
 
   const [buttonText, setButtonText] = useState("Waiting for Taylor");
@@ -123,8 +123,9 @@ export default function App() {
    
   }
 
-
-
+ if(!fontsLoaded) return (
+  <ActivityIndicator size="large" color="#9600ff" style={{flex:1, justifyContent:"center", backgroundColor:"#121212"}}/>
+ )
 
   return (
     <Animated.View
@@ -195,27 +196,38 @@ const styles = StyleSheet.create({
     marginVertical: 20,
     textAlign: "center",
     textAlignVertical: "top",
-    fontWeight: 800,
   },
   btn: {
     width: 150,
     padding: 10,
-    borderWidth: 2,
-    borderColor: "#fff",
+    /* borderWidth: 1,
+    borderColor: "#9600ff", */
     borderRadius: 5,
+    backgroundColor: "rgba(171, 70, 255,0.7)",
+    shadowColor: "#000",
+shadowOffset: {
+	width: 0,
+	height: 6,
+},
+shadowOpacity: 0.37,
+shadowRadius: 7.49,
+
+elevation: 12,
     
   },
   btnText: {
-    color: "#fff",
+    color: "#121212",
     textAlign: "center",
     fontSize: 15,
-    fontWeight: 700,
+    fontWeight: 800,
   },
   songName:{
     fontSize: 21,
     color : "#fff",
     fontWeight: 700,
     textAlign: "center",
+    width:170,
+    alignSelf: "center",
   },
   album:{
     fontSize: 18,
