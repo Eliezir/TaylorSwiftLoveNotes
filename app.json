@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "SwiftQuotes",
-    "slug": "SwiftQuotes",
+    "name": "Taylor's Love Notes",
+    "slug": "TaylorsLoveNotes",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -9,7 +9,7 @@
     "splash": {
       "image": "./assets/splash.png",
       "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
+      "backgroundColor": "#000000"
     },
     "assetBundlePatterns": [
       "**/*"
@@ -20,11 +20,23 @@
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
-        "backgroundColor": "#ffffff"
-      }
+        "backgroundColor": "#000000"
+      },
+      "package": "com.eliezir.TaylorsLoveNotes"
     },
     "web": {
       "favicon": "./assets/favicon.png"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "038dfb82-be8d-4699-810f-2a2a14e267be"
+      }
+    },
+    "runtimeVersion": {
+      "policy": "sdkVersion"
+    },
+    "updates": {
+      "url": "https://u.expo.dev/fa46a04b-5665-4222-b37b-45c7acaa5b7c"
     }
   }
 }
